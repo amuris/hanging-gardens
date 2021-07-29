@@ -1,0 +1,71 @@
+# official tutorial
+# mkdocs-material: https://squidfunk.github.io/mkdocs-material/
+# mkdocs: https://www.mkdocs.org/user-guide/configuration/
+
+site_name: Amaris' Hanging Gardens
+site_url: https://amaris.ifplusor.win
+repo_name: hanging-gardens
+repo_url: https://github.com/amuris/hanging-gardens
+edit_uri: edit/main/docs/
+theme:
+  name: material
+  #  favicon: attachment/portrait.png
+  language: zh # 中文，解决中文搜索问题
+  icon:
+    repo: fontawesome/brands/github
+  features:
+    - navigation.instant
+    - navigation.tabs
+    - navigation.top
+    - search.highlight
+extra_css:
+  - assets/css/custom.css
+markdown_extensions:
+  # navigation
+  - toc:
+      permalink: "#"
+      slugify: !!python/name:pymdownx.slugs.uslugify
+  # abbreviations
+  - abbr
+  # admonitions
+  - admonition
+  - pymdownx.details
+  # footnotes
+  - footnotes
+  # code blocks
+  - pymdownx.highlight:
+      linenums: true
+      linenums_style: pymdownx-inline
+  - pymdownx.inlinehilite
+  # content tabs
+  - pymdownx.tabbed
+  # formatting
+  - pymdownx.critic
+  # - pymdownx.betterem
+  - pymdownx.mark
+  - pymdownx.caret
+  - pymdownx.tilde
+  - pymdownx.smartsymbols
+  # list
+  - mdx_truly_sane_lists
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  # math
+  - pymdownx.arithmatex
+  # meta tags
+  - meta
+  # others
+  - attr_list
+  - pymdownx.magiclink
+  - pymdownx.superfences
+plugins:
+  - exclude:
+      glob:
+        - "*.tmp"
+        - "*.pdf"
+        - "*.gz"
+      regex:
+        - '.*\.(tmp|bin|tar)$'
+  - search
+  - roamlinks
